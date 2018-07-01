@@ -30,16 +30,14 @@ func (b *Block) CalcHeaderHash() []byte {
 	return common.CalcHash(headerBytes)
 }
 
-func (b *Block) PrintBlockHdr(detailed bool) {
-	fmt.Printf("Version:\t%d\n", b.version)
-	fmt.Printf("Time:\t%d\n", b.time)
-	fmt.Printf("Previous Header Hash:\t%x\n", b.prev_hdr_hash)
-	fmt.Printf("Hash:\t%x\n", b.hash)
+func (b *Block) PrintBlockInfo(detailed bool) {
+	fmt.Printf("Version: %d\n", b.version)
+	fmt.Printf("Time: %d\n", b.time)
+	fmt.Printf("Previous Header Hash:\n\t%x\n", b.prev_hdr_hash)
+	fmt.Printf("Hash:\n\t%x\n", b.hash)
 
 	if detailed {
-		fmt.Println()
-		fmt.Printf("Data:\t%s\n", b.data)
-		fmt.Println()
+		fmt.Printf("Data:\n\t%s\n", b.data)
 	}
 }
 
